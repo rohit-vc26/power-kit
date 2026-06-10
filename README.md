@@ -2,37 +2,50 @@
 
 **A simple toolkit to power up your team's data and email work with Claude.**
 
-Built for non-technical teams. No coding required. Just install and use.
+Built for non-technical teams. No coding. No downloads. One command.
 
 ---
 
 ## What is Power-Kit?
 
-Power-Kit gives your Claude Code app a set of pre-loaded skills, smart helpers, and safety rules so your team can:
+Power-Kit gives your Claude Code app a pre-loaded set of skills, smart helpers, and safety rules so your team can:
 
 - Analyze Excel and Google Sheets data quickly
 - Write better email campaigns (spam-free, AI-detection-free)
-- Save your work automatically between sessions
+- Save sessions automatically (never lose work)
 - Use the right AI brain (Haiku for simple work, Opus for hard work)
-- Never lose what you were doing when you close and reopen
+- Get auto-updated when new versions release (zero effort)
 
 ---
 
-## Quick Start (2 minutes)
+## Install in 30 Seconds
 
-### Windows users
-1. Download Power-Kit (`power-kit.zip`)
-2. Right-click the ZIP, click **Extract All**
-3. Double-click `install.bat`
-4. Done. Open Claude Code.
+### Windows
+Open **PowerShell** and paste:
+```powershell
+irm https://raw.githubusercontent.com/rohit-vc26/power-kit/main/install/quick-install.ps1 | iex
+```
 
-### Mac users
-1. Download Power-Kit (`power-kit.zip`)
-2. Double-click to unzip
-3. Open Terminal, drag `install.sh` into Terminal, press Enter
-4. Done. Open Claude Code.
+### Mac / Linux
+Open **Terminal** and paste:
+```bash
+curl -fsSL https://raw.githubusercontent.com/rohit-vc26/power-kit/main/install/quick-install.sh | bash
+```
 
-That's it. No questions to answer. No folders to pick.
+That's it. No download. No extract. No clicks. Just one line.
+
+---
+
+## Auto-Updates (Zero Effort)
+
+Power-Kit checks GitHub every 6 hours. When you push a new version:
+
+1. Team's Claude Code detects update silently
+2. Downloads and installs in background
+3. Shows: `✅ Updated to v1.0.2`
+4. Done — no team action needed
+
+Your team is always on the latest version. Without lifting a finger.
 
 ---
 
@@ -40,22 +53,22 @@ That's it. No questions to answer. No folders to pick.
 
 | Feature | What it does |
 |---------|-------------|
-| Excel Skills | Read, write, analyze any spreadsheet |
-| Google Sheets | Pull data, build reports |
+| Excel + Google Sheets Skills | Read, write, analyze any spreadsheet |
 | Email Helper | Write campaigns that pass spam checks |
 | Email Analyst | Find patterns in reply data |
 | Database Helper | Run SQL without writing SQL |
 | Campaign Plans | Design email sequences |
 | MCP Builder | Connect Claude to your tools |
-| Memory | Remembers what you did yesterday |
-| Auto-Save | Saves your session every chat close |
-| Smart Model | Picks Haiku (fast) or Opus (smart) for you |
+| Memory Plugin | Remembers yesterday's work |
+| Auto-Save | Saves your session when you close |
+| Smart Model | Picks Haiku (fast) or Opus (smart) |
+| Auto-Update | Latest version, always |
 
 ---
 
 ## Email Writing Rules (Built-In)
 
-Power-Kit checks every email you write against 8 rules:
+Power-Kit checks every email against 8 rules:
 
 1. Sounds human (not AI)
 2. No em-dashes
@@ -74,31 +87,21 @@ You don't have to memorize these. Power-Kit checks for you.
 
 **Morning:** Open Claude Code. Your session from yesterday loads automatically.
 
-**During work:** Use the skills you need:
-- "Analyze this Excel" → uses Excel skill
-- "Write 3 email subjects" → uses Email Helper
-- "Look at this campaign data" → uses Email Analyst
+**During work:** Use skills you need:
+- "Analyze this Excel" → Excel skill
+- "Write 3 email subjects" → Email Helper
+- "Look at this campaign data" → Email Analyst
 
 **Evening:** Close the chat. Power-Kit saves your work.
 
-**Tomorrow:** Open Claude Code. Your work is right there.
-
----
-
-## Updates
-
-Power-Kit updates automatically. When you open it, it checks for new features. If there's an update, it'll ask: "Update now?" Click yes. Done.
-
-You can also update manually:
-- Windows: Double-click `update.bat`
-- Mac: Open Terminal, drag `update.sh`, press Enter
+**Tomorrow:** Open Claude Code. Continue.
 
 ---
 
 ## For Managers
 
-- **Versioned**: Every team member uses the same version
-- **Tracked**: Reports who used which skill when
+- **Always Updated**: Push to GitHub → team auto-gets it
+- **Versioned**: Whole team on same version
 - **Safe**: Banned words list prevents brand damage
 - **Auditable**: All emails logged for review
 
@@ -108,17 +111,17 @@ See [docs/manager-guide.md](docs/manager-guide.md).
 
 ## Need Help?
 
-- **Stuck?** Check [docs/beginner-guide.md](docs/beginner-guide.md)
-- **Email won't pass rules?** See [docs/email-rules.md](docs/email-rules.md)
-- **Something broke?** Run `repair.bat` (Windows) or `repair.sh` (Mac)
-- **Still stuck?** Ask Rohit.
+- **Stuck?** Read [docs/beginner-guide.md](docs/beginner-guide.md)
+- **Email rule confusion?** See [docs/email-rules.md](docs/email-rules.md)
+- **Something broke?** Re-run the install command above
+- **Still stuck?** Ask Rohit
 
 ---
 
 ## Version
 
-Current: **v1.0.0**  
-Released: 2026-06-10  
+Current: **v1.0.1**
+Released: 2026-06-10
 Compatible with: Claude Code, Windows 10+, macOS 12+, Ubuntu 22+
 
 See [CHANGELOG.md](CHANGELOG.md) for release notes.

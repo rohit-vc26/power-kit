@@ -65,9 +65,9 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash ~/.claude/hooks/power_kit_version_check.sh",
-            "timeout": 5000,
-            "statusMessage": "Checking for Power-Kit updates..."
+            "command": "bash ~/.claude/hooks/power_kit_auto_update.sh",
+            "timeout": 60000,
+            "statusMessage": "Power-Kit: checking for updates..."
           }
         ]
       }
