@@ -1,0 +1,144 @@
+{
+  "_comment": "Power-Kit v1.0.0 — Pre-configured Claude Code settings for data + email teams",
+  "_version": "1.0.0",
+  "_powerKitInstalled": true,
+
+  "permissions": {
+    "allow": [
+      "Bash(ls *)",
+      "Bash(cat *)",
+      "Bash(grep *)",
+      "Bash(find *)",
+      "Bash(wc *)",
+      "Bash(head *)",
+      "Bash(tail *)",
+      "Bash(echo *)",
+      "Bash(pwd)",
+      "Bash(date)",
+      "mcp__google_sheets__*",
+      "mcp__excel__*",
+      "mcp__mcp-registry__*"
+    ]
+  },
+
+  "model": "claude-haiku-4-5",
+  "_modelComment": "Default Haiku — saves 70% tokens on reads/mechanics. Switch to Opus manually for planning/analysis.",
+
+  "alwaysThinkingEnabled": false,
+  "agentPushNotifEnabled": true,
+  "theme": "dark",
+
+  "enabledPlugins": {
+    "claude-mem@thedotmack": true
+  },
+
+  "extraKnownMarketplaces": {
+    "claude-plugins-official": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/claude-plugins-official"
+      }
+    },
+    "thedotmack": {
+      "source": {
+        "source": "github",
+        "repo": "thedotmack/claude-mem"
+      }
+    }
+  },
+
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ~/.claude/hooks/power_kit_session_load.sh",
+            "timeout": 3000,
+            "statusMessage": "Loading your last session..."
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ~/.claude/hooks/power_kit_version_check.sh",
+            "timeout": 5000,
+            "statusMessage": "Checking for Power-Kit updates..."
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ~/.claude/hooks/power_kit_email_check.sh",
+            "timeout": 2000
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ~/.claude/hooks/power_kit_session_save.sh",
+            "timeout": 5000,
+            "statusMessage": "Saving your session..."
+          }
+        ]
+      }
+    ]
+  },
+
+  "_emailRules": {
+    "_comment": "Email content rules — auto-checked when Claude writes/edits emails",
+    "enabled": true,
+    "bannedWords": [
+      "guaranteed", "guarantee", "warranties", "warranted",
+      "risk-free", "no risk", "limited time", "act now",
+      "click here immediately", "don't miss out", "claim your",
+      "free money", "one-time offer", "exclusive", "last chance",
+      "must work", "can't fail", "100% success", "miracle",
+      "amazing results", "unbelievable"
+    ],
+    "noEmDashes": true,
+    "minWords": 65,
+    "maxWords": 90,
+    "requireCTA": true,
+    "requireBelowCTAHook": true,
+    "noFakePromises": true,
+    "noGuarantees": true,
+    "humanizeCheck": true
+  },
+
+  "_modelRules": {
+    "_comment": "When to switch model — manual for now, automation pending",
+    "useHaikuFor": ["reads", "grep", "edit", "summarize", "search", "format"],
+    "useOpusFor": ["plan", "analyze", "design", "debug", "architecture", "review"]
+  },
+
+  "_sessionPersistence": {
+    "_comment": "Auto-save session context for non-technical users",
+    "enabled": true,
+    "autoLoad": true,
+    "autoSave": true,
+    "saveLocation": "~/.claude/projects/<project>/memory/session_context_active.md"
+  },
+
+  "_powerKitMeta": {
+    "version": "1.0.0",
+    "installedAt": "TIMESTAMP_PLACEHOLDER",
+    "repo": "https://github.com/rohit-vc26/power-kit",
+    "updateCheck": "daily",
+    "team": "SpunkAds"
+  }
+}
